@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+	<title>WB tourism</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="/">WestBengal Tourism</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#">About</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <%if(!user){%>
+        <li><a href="/users/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/users/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <%}%>
+      <%if(user){%>
+      <li><a href="#">Welcome <%=user.name%></a></li>
+      <li><a href="/users/login">Sign Out</a></li>
+      <%}%>
+      </ul>
+    </div>
+  </div>
+  
+</nav>
+<div class="container">
+  <%if(success_msg&&success_msg.length>0){%>
+<div class="alert alert-success"><%=success_msg%></div>
+<%}%>
+<%if(error_msg&&error_msg.length>0){%>
+<div class="alert alert-danger"><%=error_msg%></div>
+<%}%>

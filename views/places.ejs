@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+<header class="jumbotron">
+    <div class="container">
+    <h1>Welcome to Bengal Tourism</h1>
+    <p>Pick some to the best places to visit in Bengal and also put your visit</p>
+     <p>
+        <a class="btn btn-primary btn-large" href="/places/add">Add New Visits</a>
+     </p>
+    </div>
+</header>
+<div class="row test-center" style="display:flex; flex-wrap: wrap;">
+    <%places.forEach(function(place){%>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= place.image %>">
+                   <div class="caption">
+                       <h4><%= place.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/places/<%= place._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+            </div>
+        </div>
+        <%})%>
+</div>
+<% include ./partials/footer%>
