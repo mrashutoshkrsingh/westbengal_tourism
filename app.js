@@ -2,7 +2,9 @@ var express=require("express");
 var app=express();
 var passport=require("passport")
 var flash = require('connect-flash');
-var session = require('express-session')
+var session = require('express-session'),
+methodOverride= require("method-override")
+app.use(methodOverride("_method"))
 //body parser
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -41,6 +43,9 @@ app.use("/users",users)
 //places routes
 var places=require("./routes/places/places")
 app.use("/places",places)
+//comment routes
+var comment=require("./routes/comments")
+app.use("/places/:id/comments",comment)
 app.listen(process.env.PORT,process.env.ID,()=>{
     console.log("Server has started")
 })

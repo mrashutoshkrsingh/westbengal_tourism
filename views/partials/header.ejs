@@ -6,8 +6,9 @@
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/stylesheets/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body style="background:#ffcc99">
     <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -31,7 +32,7 @@
       <%}%>
       <%if(user){%>
       <li><a href="#">Welcome <%=user.name%></a></li>
-      <li><a href="/users/login">Sign Out</a></li>
+      <li><a href="/users/logout">Sign Out</a></li>
       <%}%>
       </ul>
     </div>
